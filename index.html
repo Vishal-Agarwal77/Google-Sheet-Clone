@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Bai+Jamjuree&family=Inter&family=Krub:wght@600&family=Montserrat&family=Poppins&family=Ubuntu&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="options">
+        <form class="form">
+            <select name="fontFamily" class="input">
+                <option value="Times-New-Roman">Times New Roman</option>
+                <option value="poppins-regular">Regular</option>
+                <option value="poppins-extra-bold">Extra Bold</option>
+                <option value="poppins-medium">Medium</option>
+            </select>
+            <input class="input" type="number" name="fontSize" min="8" max="32" value="16" />
+            <div>
+                <input type="checkbox" id="bold" name="isBold" />
+                <label for="bold" class="material-symbols-outlined">format_bold</label>
+            </div>
+            <div>
+                <input type="checkbox" id="italic" name="isItalic" />
+                <label for="italic" class="material-symbols-outlined">format_italic</label>
+            </div>
+            <div>
+                <input type="checkbox" id="underline" name="isUnderline" />
+                <label for="underline" class="material-symbols-outlined">format_underlined</label>
+            </div>
+            <div>
+                <input type="radio" name="align" value="left" id="left" checked />
+                <label class="material-symbols-outlined" for="left">format_align_left</label>
+                <input type="radio" name="align" value="center" id="center" />
+                <label class="material-symbols-outlined" for="center">format_align_center</label>
+                <input type="radio" name="align" value="right" id="right">
+                <label class="material-symbols-outlined" for="right">format_align_right</label>
+            </div>
+            <div>
+                <input type="color" name="textColor" id="textcolor" />
+                <label for="textcolor" class="material-symbols-outlined">format_color_text</label>
+            </div>
+            <div>
+                <input type="color" value="#ffffff" name="bgColor" id="bgcolor" />
+                <label for="bgcolor" class="material-symbols-outlined">format_color_fill</label>
+            </div>
+            <span class="material-symbols-outlined" id="download" onclick="exportdata()">
+                cloud_download
+            </span>
+            <span class="material-symbols-outlined">
+                cloud_upload
+            </span>
+            <!-- <span class="material-symbols-outlined" id="previoussheet" onclick="previoussheet()">
+                skip_previous
+            </span>
+            <span class="material-symbols-outlined" id="nextsheet" onclick="nextsheet()">
+                add_box
+            </span> -->
+        </form>
+    </div>
+    <div id="cell-state">
+        <div id="active-cell">null</div>
+        <input id="search" type="text" placeholder="f ( x )" onfocusout="searchbar()" />
+    </div>
+    <!-- <section id="format-tools">
+        <span class="material-symbols-outlined">
+            content_copy
+        </span>
+        <span class="material-symbols-outlined">
+            content_cut
+        </span>
+        <span class="material-symbols-outlined">
+            content_paste
+        </span>
+        <select name="font" id="font">
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Monospace">Monospace</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Open Sans">Open Sans</option>
+        </select>
+        <select name="font-size" id="font-size">
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+        </select>
+        <span class="material-symbols-outlined" id="bold">
+            format_bold
+        </span>
+        <span class="material-symbols-outlined" id="italic">
+            format_italic
+        </span>
+        <span class="material-symbols-outlined" id="underline">
+            format_underlined
+        </span>
+        <span class="material-symbols-outlined" id="left-align">
+            format_align_left
+        </span>
+        <span class="material-symbols-outlined" id="center-align">
+            format_align_center
+        </span>
+        <span class="material-symbols-outlined" id="right-align">
+            format_align_right
+        </span>
+        <span class="material-symbols-outlined">
+            format_color_text
+        </span>
+        <span class="material-symbols-outlined">
+            format_color_fill
+        </span>
+        <span class="material-symbols-outlined">
+            cloud_download
+        </span>
+        <span class="material-symbols-outlined">
+            cloud_upload
+        </span>
+    </section> -->
+    <div id="root">
+        <div id="header">
+            <div class="head-cell first"></div>
+        </div>
+        <div id="body">
+            <div id="sno"></div>
+            <div id="body-container"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <span class="material-symbols-outlined change-sheet" onclick="previoussheet()" >
+            chevron_left
+        </span>
+        <span class="material-symbols-outlined change-sheet" onclick="nextsheet()">
+            chevron_right
+        </span>
+        <span id="sheet">Sheet 1</span>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
