@@ -42,7 +42,7 @@
     padding: 0 .1px ;
 }
 .head-cell {
-    min-width: 200px;
+    min-width: 100px;
     height: 20px;
     border: 0.1px solid #C4C7C5;
     border-top-width: 2px;
@@ -76,7 +76,7 @@
 }
 .cell {
     border: 0.1px solid #C4C7C5;
-    width: 200px;
+    width: 100px;
     height: 25px ;
     outline: none;
 }
