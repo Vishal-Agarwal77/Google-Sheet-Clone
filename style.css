@@ -34,7 +34,7 @@
     color:#041E49;
 }
 .head-cell:first-child {
-    background-color: red;
+    background-color: white;
     position: sticky;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
     padding: 0 .1px ;
 }
 .head-cell {
-    min-width: 100px;
+    min-width: 200px;
     height: 20px;
     border: 0.1px solid #C4C7C5;
     border-top-width: 2px;
@@ -76,16 +76,10 @@
 }
 .cell {
     border: 0.1px solid #C4C7C5;
-    width: 100px;
+    width: 200px;
     height: 25px ;
     outline: none;
 }
-
-/* .cell:focus {
-    height:25px;
-    width: 200px;
-    border: 2px solid #1B72E8;
-} */
 
 .form{
     display: flex;
@@ -98,9 +92,6 @@
 input:checked +label{
     background-color: #EDF2FA;
 }
-/* input[value="true"]{
-    background-color: #EDF2FA;
-} */
 .input{
     padding: 5px;
     min-width: 100px;
@@ -186,4 +177,7 @@ input[type="checkbox"] +label,input[type="radio"] +label{
     padding: 0px 5px;
     font-family: poppins;
     border-bottom: 2px solid green;
+}
+#footer .change-sheet:hover{
+    background-color: #EDF2FA;
 }
