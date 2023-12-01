@@ -83,11 +83,19 @@
 
 .form{
     display: flex;
-    padding: 26px;
-    padding-left: 70px;
+    padding-top: 1.9vw;
+    padding-bottom: 2.3vw;
+    padding-left: 5.12vw;
     /* justify-content: center; */
-    gap:20px;
+    gap:1.4vw;
     align-items: center;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width:790px){
+    .form{
+        justify-content: center;
+        padding-bottom: 5vw;
+    }
 }
 input:checked +label{
     background-color: #EDF2FA;
