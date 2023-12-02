@@ -273,12 +273,13 @@ function searchbar() {
         res=max(searchvalue);
     }
     else if(searchvalue.slice(1, 5) == "SORT"){
-        // console.log("sort start");
         sort(searchvalue);
         return ;
     }
+    else if(searchvalue.slice(1, 7) == "SEARCH"){
+        res=search(searchvalue);
+    }
     searchbar.value += " = " + res;
-    // console.log("yes");
 }
 function sum(value) {
     let startcell = document.getElementById(value.slice(5, value.indexOf(":")));
@@ -380,9 +381,7 @@ function sort(value){
             arr.push(i.innerText);
         }
     }
-    // console.log("Yes");
     arr.sort();
-    // console.log(order);
     if(order=="-1"){
         arr.reverse();
     }
@@ -392,6 +391,46 @@ function sort(value){
             i.innerText=arr[x];
             x++;
         }
+    }
+}
+function search(value){
+    let str=value.slice(value.indexOf("(")+2,value.indexOf(",")-1);
+    let location=value.slice(value.indexOf(",")+1,value.indexOf(")"));
+    let str1=document.getElementById(location).innerText;
+    str1=str1.toUpperCase();
+    let str2=str.toUpperCase();
+    return str1.indexOf(str2);
+}
+let content=[];
+function contentcut(){
+    let selectedcells=document.getElementsByClassName("selected");
+    for(let i of selectedcells){
+        content.push(state[current_sheet][i.id]);
+        applyStyles(defaultstyle);
+        i.innerText="";
+        delete state[current_sheet][i.id];
+        content.push();
+    }
+}
+function contentcopy(){
+    let selectedcells=document.getElementsByClassName("selected");
+    for(let i of selectedcells){
+        content.push(state[current_sheet][i.id]);
+        content.push();
+    }
+}
+function contentpaste(){
+    let selectedcells=document.getElementsByClassName("selected");
+    let row=selectedcells[0].id[0];
+    let col=selectedcells[0].id.slice(1);
+    for(let i of content){
+        let pastelocation=document.getElementById(`${row}${col}`);
+        if(!state[current_sheet][`${row}${col}`]){
+            state[current_sheet][`${row}${col}`]={};
+        }
+        state[current_sheet][`${row}${col}`]={...i};        
+        pastelocation.innerText=i["text"];
+        applyStyles(state[current_sheet][`${row}${col}`]);
     }
 }
 

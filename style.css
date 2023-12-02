@@ -130,6 +130,14 @@ input[type="checkbox"] +label,input[type="radio"] +label{
     border-radius: 4px;
     /* border:2px solid red; */
 }
+.form .contentop{
+    padding: 10px;
+}
+.form .contentop:hover{
+    cursor: pointer;
+    border-radius: 4px;
+    background: #EDF2FA;  
+}
 .selected{
     /* box-sizing: content-box; */
     border:2px solid #1A73E8;

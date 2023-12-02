@@ -21,6 +21,15 @@
 <body>
     <div id="options">
         <form class="form">
+            <span class="material-symbols-outlined contentop" onclick="contentcut()">
+                content_cut
+            </span>
+            <span class="material-symbols-outlined contentop" onclick="contentcopy()">
+                content_copy
+            </span>
+            <span class="material-symbols-outlined contentop" onclick="contentpaste()">
+                content_paste
+            </span>
             <select name="fontFamily" class="input">
                 <option value="Times-New-Roman">Times New Roman</option>
                 <option value="poppins-regular">Regular</option>
@@ -78,7 +87,7 @@
         </div>
     </div>
     <div id="footer">
-        <span class="material-symbols-outlined change-sheet" onclick="previoussheet()" >
+        <span class="material-symbols-outlined change-sheet" onclick="previoussheet()">
             chevron_left
         </span>
         <span class="material-symbols-outlined change-sheet" onclick="nextsheet()">
